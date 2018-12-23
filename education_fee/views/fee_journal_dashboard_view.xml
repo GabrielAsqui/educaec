@@ -7,7 +7,7 @@
                 <field name="id"/>
                 <field name="name"/>
                 <field name="type"/>
-                <field name="color"/>
+                <!-- <field name="color"/> -->
                 <field name="show_on_dashboard"/>
                 <field name="kanban_dashboard"/>
                 <templates>

@@ -214,7 +214,7 @@
                     </div>
                     <label string="Credit Note" attrs="{'invisible': ['|',('state','=','draft'), ('type','!=','out_refund')]}"/>
                     <h1 class="mt0">
-                        <div attrs="{'invisible': [('sequence_number_next_prefix','!=',False)]}">
+                       <!--  <div attrs="{'invisible': [('sequence_number_next_prefix','!=',False)]}">
                             <label string="Draft Receipt" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','!=','out_invoice')]}"/>
                             <label string="Draft Credit Note" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','!=','out_refund')]}"/>
                             <field name="number" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}"/>
@@ -223,7 +223,7 @@
                             <label string="Receipt Number:"/><br/>
                             <field name="sequence_number_next_prefix" class="oe_inline"/>
                             <field name="sequence_number_next" class="oe_inline" readonly="1"/>
-                        </div>
+                        </div> -->
                     </h1>
                     <field name="type" invisible="1"/>
                     <group>
@@ -392,7 +392,7 @@
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                    <field name="activity_ids" widget="mail_activity"/>
+                    <!-- <field name="activity_ids" widget="mail_activity"/> -->
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
                 </form>
@@ -426,17 +426,17 @@
                     <separator/>
                     <filter domain="[('user_id','=',uid)]" help="My Receipts"/>
                     <separator/>
-                    <filter string="My Activities" name="activities_my"
-                        domain="[('activity_ids.user_id', '=', uid)]"/>
+                    <!-- <filter string="My Activities" name="activities_my"
+                        domain="[('activity_ids.user_id', '=', uid)]"/> -->
                     <separator/>
-                    <filter string="Late Activities" name="activities_overdue"
+                    <!-- <filter string="Late Activities" name="activities_overdue"
                         domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
                         help="Show all records which has next action date is before today"/>
                     <filter string="Today Activities" name="activities_today"
                         domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
                     <filter string="Future Activities" name="activities_upcoming_all"
                         domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
-                        ]"/>
+                        ]"/> -->
                     <group expand="0" string="Group By">
                         <filter name="group_by_partner_id" string="Student" context="{'group_by':'commercial_partner_id'}"/>
                         <filter string="Responsible Person" context="{'group_by':'user_id'}"/>

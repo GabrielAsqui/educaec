@@ -13,7 +13,7 @@ class EducationTrip(models.Model):
     _name = 'education.trip'
     _rec_name = "name"
     _description = "Route"
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    # _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Route', size=32, default='New')
     stop = fields.One2many('education.trip_stop', 'stop_trip_rel', string='Stops')

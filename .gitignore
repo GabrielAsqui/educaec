@@ -1,26 +1,53 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+<<<<<<< HEAD
+=======
+*$py.class
+>>>>>>> 34b91cbcdb33cac54346e808b1d0eb98cd73776c
 
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+<<<<<<< HEAD
 env/
 bin/
 build/
 develop-eggs/
 dist/
 eggs/
+=======
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+>>>>>>> 34b91cbcdb33cac54346e808b1d0eb98cd73776c
 lib/
 lib64/
 parts/
 sdist/
 var/
+<<<<<<< HEAD
 *.egg-info/
 .installed.cfg
 *.egg
+=======
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+>>>>>>> 34b91cbcdb33cac54346e808b1d0eb98cd73776c
 
 # Installer logs
 pip-log.txt
@@ -30,6 +57,7 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .coverage
+<<<<<<< HEAD
 .cache
 nosetests.xml
 coverage.xml
@@ -47,10 +75,74 @@ coverage.xml
 
 # Rope
 .ropeproject
+=======
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+>>>>>>> 34b91cbcdb33cac54346e808b1d0eb98cd73776c
 
 # Sphinx documentation
 docs/_build/
 
+<<<<<<< HEAD
 # Backup files
 *~
 *.swp
+=======
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+>>>>>>> 34b91cbcdb33cac54346e808b1d0eb98cd73776c

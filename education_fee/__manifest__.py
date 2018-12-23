@@ -32,7 +32,7 @@
     'description': """Manage students fee""",
     "depends": ['base', 'account', 'education_core'],
     "data": [
-        'data/account_data.xml',
+        # 'data/account_data.xml',
         'security/ir.model.access.csv',
         'views/fee_menu_view.xml',
         'views/fee_register.xml',
