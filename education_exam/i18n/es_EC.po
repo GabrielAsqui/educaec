@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-08 15:49+0000\n"
-"PO-Revision-Date: 2018-12-08 12:21-0500\n"
+"POT-Creation-Date: 2019-02-26 19:09+0000\n"
+"PO-Revision-Date: 2019-02-26 14:23-0500\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Año académico"
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_form
 msgid "After closing the exam, you can't do valuation. You can close the exam only after the completion of valuation process. Do you want to proceed?"
-msgstr "After closing the exam, you can't do valuation. You can close the exam only after the completion of valuation process. Do you want to proceed?"
+msgstr "Después de cerrar el examen, no se puede hacer una valoración. Puede cerrar el examen solo después de completar el proceso de valoración. Quieres proceder?"
 
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_form
@@ -159,17 +159,17 @@ msgstr "Borrador"
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_type_form
 msgid "Eg: Annual Exam"
-msgstr "Eg: Annual Exam"
+msgstr "Eg: Examen Anual"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_end_date
 msgid "End Date"
-msgstr "Fecha final"
+msgstr "Fecha Final"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_valuation_teachers_id
 msgid "Evaluator"
-msgstr "Evaluador"
+msgstr "Docente"
 
 #. module: education_exam
 #: model:ir.actions.act_window,name:education_exam.act_examination_view
@@ -197,7 +197,7 @@ msgstr "Resultado Calificaciones"
 #. module: education_exam
 #: model:ir.actions.act_window,name:education_exam.view_exam_results_students
 msgid "Exam Results Student"
-msgstr "Exam Results Student"
+msgstr "Resultado de Calificaciones Estudiantes"
 
 #. module: education_exam
 #: model:ir.actions.act_window,name:education_exam.act_exam_type_view
@@ -275,18 +275,18 @@ msgstr "Actualizado en"
 #: model:ir.model.fields,field_description:education_exam.field_education_subject_line_mark
 #: model:ir.model.fields,field_description:education_exam.field_exam_valuation_line_mark_scored
 msgid "Mark"
-msgstr "P1"
+msgstr "Puntuación"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_results_subject_line_mark_scored
 msgid "Mark Scored"
-msgstr "P1"
+msgstr "Nota"
 
 #. module: education_exam
 #: code:addons/education_exam/models/exam_valuation.py:202
 #, python-format
 msgid "Mark Scored must be less than Max Mark"
-msgstr "División must be less than Max Mark"
+msgstr "División debe ser menor que Max Nota"
 
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_result_form
@@ -297,7 +297,7 @@ msgstr "Hoja calificaciones"
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_valuation_mark_sheet_created
 msgid "Mark sheet Created"
-msgstr "Mark sheet Created"
+msgstr "Hoja calificaciones creada"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_valuation_mark
@@ -334,7 +334,7 @@ msgstr "Nota Mín"
 #: code:addons/education_exam/models/exam_valuation.py:60
 #, python-format
 msgid "Pass mark must be less than Max Mark"
-msgstr "Pass mark must be less than Max Mark"
+msgstr "La nota de pase debe ser menor que la nota máxima"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_exam_valuation_line_pass_or_fail
@@ -346,7 +346,7 @@ msgstr "A"
 #: code:addons/education_exam/models/examination.py:77
 #, python-format
 msgid "Please Add Subjects"
-msgstr "Please Add Subjects"
+msgstr "Por favor agregue Asignaturas"
 
 #. module: education_exam
 #: model:ir.actions.act_window,name:education_exam.act_exam_result_report_view
@@ -377,7 +377,7 @@ msgstr "School/Class/División Wise"
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_result_form
 msgid "Scored Total"
-msgstr "Scored Total"
+msgstr "Nota Total"
 
 #. module: education_exam
 #: model:ir.model.fields,help:education_exam.field_education_exam_academic_year
@@ -385,7 +385,7 @@ msgstr "Scored Total"
 #: model:ir.model.fields,help:education_exam.field_education_exam_valuation_academic_year
 #: model:ir.model.fields,help:education_exam.field_results_subject_line_academic_year
 msgid "Select the Academic Year"
-msgstr "Select the Academic Year"
+msgstr "Seleccione Año Académico"
 
 #. module: education_exam
 #: model:ir.ui.view,arch_db:education_exam.examination_valuation_form
@@ -395,13 +395,13 @@ msgstr "Cambiar a borrador"
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_start_date
 msgid "Start Date"
-msgstr "Fecha inicial"
+msgstr "Fecha Inicio"
 
 #. module: education_exam
 #: code:addons/education_exam/models/examination.py:64
 #, python-format
 msgid "Start date must be Anterior to end date"
-msgstr "Start date must be Anterior to end date"
+msgstr "La fecha de inicio debe ser anterior a la fecha de finalización"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_state
@@ -430,20 +430,20 @@ msgstr "Estudiantes"
 #: model:ir.model.fields,field_description:education_exam.field_results_subject_line_subject_id
 #: model:ir.ui.view,arch_db:education_exam.examination_result_report_search
 msgid "Subject"
-msgstr "Asigantura"
+msgstr "Asignatura"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_results_subject_line
 #: model:ir.model.fields,field_description:education_exam.field_education_exam_subject_line
 #: model:ir.ui.view,arch_db:education_exam.examination_form
 msgid "Subjects"
-msgstr "Asiganturas"
+msgstr "Asignaturas"
 
 #. module: education_exam
 #: code:addons/education_exam/models/exam_valuation.py:95
 #, python-format
 msgid "There are no students in this Division"
-msgstr "There are no students in this División"
+msgstr "No hay estudiantes en esta División"
 
 #. module: education_exam
 #: model:ir.model.fields,field_description:education_exam.field_education_subject_line_time_from
@@ -504,34 +504,34 @@ msgstr ""
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_education_exam
 msgid "education.exam"
-msgstr "education.exam"
+msgstr "Calificaciones"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_education_exam_results
 msgid "education.exam.results"
-msgstr "education.exam.results"
+msgstr "Resultado de calificaciones"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_education_exam_type
 msgid "education.exam.type"
-msgstr "education.exam.type"
+msgstr "Tipo de calificaciones"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_education_exam_valuation
 msgid "education.exam.valuation"
-msgstr "education.exam.valuation"
+msgstr "Valuaciones"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_education_subject_line
 msgid "education.subject.line"
-msgstr "education.subject.line"
+msgstr "Lineas de asignaturas"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_exam_valuation_line
 msgid "exam.valuation.line"
-msgstr "exam.valuation.line"
+msgstr "Lineas de valuaciones"
 
 #. module: education_exam
 #: model:ir.model,name:education_exam.model_results_subject_line
 msgid "results.subject.line"
-msgstr "results.subject.line"
+msgstr "Lineas de asignaturas"
