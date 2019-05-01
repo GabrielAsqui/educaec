@@ -126,25 +126,25 @@ class EducationPromotion(models.Model):
                     ('name', '=', j.promote_class.name + "-" + j.promote_division.name),
                     ('academic_year_id', '=', new_academic_year.id)])
 
-            for k in j.students_details:
-                if k.final_result == 'pass':
-                    k.student_id.class_id = promotion_class
-                    self.env['education.student.final.result'].create({
-                        'student_id': k.student_id.id,
-                        'final_result': 'na',
-                        'division_id':  promotion_class.id,
-                        'academic_year': promotion_class.academic_year_id.id,
+                for k in j.students_details:
+                    if k.final_result == 'pass':
+                        k.student_id.class_id = promotion_class
+                        self.env['education.student.final.result'].create({
+                            'student_id': k.student_id.id,
+                            'final_result': 'na',
+                            'division_id':  promotion_class.id,
+                            'academic_year': promotion_class.academic_year_id.id,
 
-                    })
+                        })
 
-                elif k.final_result == 'fail':
-                    k.student_id.class_id = current_class.id
-                    self.env['education.student.final.result'].create({
-                        'student_id': k.student_id.id,
-                        'final_result': 'na',
-                        'division_id': current_class.id,
-                        'academic_year': current_class.academic_year_id.id,
+                    elif k.final_result == 'fail':
+                        k.student_id.class_id = current_class.id
+                        self.env['education.student.final.result'].create({
+                            'student_id': k.student_id.id,
+                            'final_result': 'na',
+                            'division_id': current_class.id,
+                            'academic_year': current_class.academic_year_id.id,
 
-                    })
+                        })
         self.name.active = False
 
