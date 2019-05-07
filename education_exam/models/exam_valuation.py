@@ -190,7 +190,7 @@ class StudentsExamValuationLine(models.Model):
 
     student_id = fields.Many2one('education.student', string='Students')
     student_name = fields.Char(string='Students')
-    mark_scored = fields.Float(string='Mark')
+    mark_scored = fields.Float(string='Mark scored')
     pass_or_fail = fields.Boolean(string='Pass/Fail')
     valuation_id = fields.Many2one('education.exam.valuation', string='Valuation Id')
     company_id = fields.Many2one('res.company', string='Company',

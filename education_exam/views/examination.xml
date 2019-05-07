@@ -121,10 +121,10 @@
         <menuitem id="examination_main_menu" parent="education_exam.examination_root_menu" name="Exam" sequence="3"/>
 
         <menuitem id="examination_sub_menu" parent="education_exam.examination_main_menu" action="act_examination_view"
-                  name="Exam" sequence="12"/>
+                  name="Exam" sequence="12" groups="education_core.group_education_hod"/>
 
         <menuitem id="examination_configuration_menu" parent="education_exam.examination_root_menu"
-                   name="Configuration" sequence="35"/>
+                   name="Configuration" sequence="35" groups="education_core.group_education_hod"/>
 
         <menuitem id="examination_type_menu" parent="education_exam.examination_configuration_menu"
                   action="act_exam_type_view" name="Exam Types" sequence="15"/>

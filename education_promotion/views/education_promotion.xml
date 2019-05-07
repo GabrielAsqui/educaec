@@ -68,7 +68,8 @@
                 id="education_year_ending_menu"
                 name="Year Ending"
                 parent="education_core.menu_education_root"
-                sequence="5"/>
+                sequence="5"
+                groups="education_core.group_education_hod"/>
         <menuitem
                 id="education_promotion_sub_menu"
                 name="Promotion"

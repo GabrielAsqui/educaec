@@ -8,13 +8,21 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="valuation_completed" type="object"
+                        <button name="valuation_completed" 
+                                type="object"
                                 attrs="{'invisible': ['|', ('mark_sheet_created', '=', False),('state', '!=', 'draft')]}"
-                                class="oe_highlight" string="Completed"/>
-                        <button name="valuation_canceled" type="object"
-                                attrs="{'invisible': [('state', '!=', 'draft')]}" string="Cancel"/>
-                        <button name="set_to_draft" type="object" attrs="{'invisible': [('state', '!=', 'completed')]}"
-                                string="Set to Draft"/>
+                                string="Completed" 
+                                class="oe_highlight" 
+                                groups="education_core.group_education_hod"/>
+                        <button name="valuation_canceled" 
+                                type="object"
+                                attrs="{'invisible': [('state', '!=', 'draft')]}" 
+                                string="Cancel"
+                                groups="education_core.group_education_hod"/>
+                        <button name="set_to_draft" type="object" 
+                                attrs="{'invisible': [('state', '!=', 'completed')]}"
+                                string="Set to Draft" 
+                                groups="education_core.group_education_hod"/>
                         <field name="state" readonly="1" widget="statusbar" statusbar_visible="draft,completed"/>
                     </header>
                     <sheet>

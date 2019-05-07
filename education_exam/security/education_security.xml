@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.rule" id="faculty_exam_valuation_rule">
+        <field name="name">Faculty Exam Valuation rule</field>
+        <field name="model_id" ref="model_education_exam_valuation" />
+        <field name="groups"
+            eval="[(4, ref('education_core.group_education_faculty'))]" />
+        <field name="domain_force"> [('teachers_id.employee_id.user_id','=',user.id)]</field>
+    </record>
+
+    <record model="ir.rule" id="hod_exam_valuation_rule">
+        <field name="name">Hod Exam Valuation rule</field>
+        <field name="model_id" ref="model_education_exam_valuation" />
+        <field name="groups"
+            eval="[(4, ref('education_core.group_education_hod'))]" />
+        <field name="domain_force"> []</field>
+    </record>
+
+</odoo>

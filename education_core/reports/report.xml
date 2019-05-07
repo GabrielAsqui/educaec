@@ -9,6 +9,7 @@
             report_type="qweb-pdf"
             name="education_core.report_student_id_card"
             file="education_core.report_student_id_card"
+            groups="education_core.group_education_hod"
         />
 
         <report
@@ -18,6 +19,7 @@
             report_type="qweb-pdf"
             name="education_core.report_faculty_id_card"
             file="education_core.report_faculty_id_card"
+            groups="education_core.group_education_hod"
         />
 
         <record id="paperformat_student_application" model="report.paperformat">
@@ -44,6 +46,7 @@
             paperformat="education_core.paperformat_student_application"
             name="education_core.report_student_application"
             file="education_core.report_student_application"
+            groups="education_core.group_education_hod"
         />
 
     </data>

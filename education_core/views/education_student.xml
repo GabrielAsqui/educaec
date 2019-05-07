@@ -80,7 +80,8 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="student_documents" type="object" widget="statinfo"
-                                class="oe_stat_button" icon="fa-calendar" string="Documents">
+                                class="oe_stat_button" icon="fa-calendar" string="Documents"
+                                groups="education_core.group_education_hod">
                         </button>
                     </div>
                     <field name="image" widget="image" class="oe_left oe_avatar" />

@@ -35,6 +35,7 @@
     'website': "https://www.educationalerp.com",
     'depends': ['education_core'],
     'data': [
+        'security/education_security.xml',
         'security/ir.model.access.csv',
         'views/examination.xml',
         'views/exam_valuation.xml',

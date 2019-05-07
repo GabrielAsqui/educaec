@@ -33,6 +33,7 @@
     'website': "https://www.educationalerp.com",
     'depends': ['education_exam'],
     'data': [
+        'security/ir.model.access.csv',
         'views/education_promotion.xml',
         'views/academic_year_closing.xml',
         'views/student_history.xml',

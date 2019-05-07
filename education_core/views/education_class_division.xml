@@ -127,6 +127,6 @@
     </record>
 
     <menuitem action="action_education_class_division_tree" parent="menu_education_admission"
-              id="menu_action_education_class_division" sequence="20"/>
+              id="menu_action_education_class_division" sequence="20" groups="education_core.group_education_hod"/>
 
 </odoo>
