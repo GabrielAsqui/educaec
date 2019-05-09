@@ -80,8 +80,15 @@
         <field name="model_id" ref="model_education_student" />
         <field name="groups"
             eval="[(4, ref('education_core.group_education_student'))]" />
+        <field name="domain_force"> [('user_id','=',user.id)]</field>
+    </record>
+
+    <record model="ir.rule" id="student_login_rule_faculty">
+        <field name="name">Student Login rule faculty</field>
+        <field name="model_id" ref="model_education_student" />
+        <field name="groups"
+            eval="[(4, ref('education_core.group_education_faculty'))]" />
         <field name="domain_force"> [('guardian_name','=',user.partner_id.id)]</field>
-        <!-- <field name="domain_force"> ['|', ('partner_id.user_id','=',user.id), ('guardian_name','=',user.partner_id.id)]</field> -->
     </record>
 
     <record model="ir.rule" id="student_login_rule_hod">

@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_education_promotion_hod,access.education.promotion.hod,education_promotion.model_education_promotion,education_core.group_education_hod,1,1,1,0
 access_education_student_final_result_hod,access.education.student.final.result.hod,education_promotion.model_education_student_final_result,education_core.group_education_hod,1,1,1,0
+access_education_promotion_principal,access.education.promotion.principal,education_promotion.model_education_promotion,education_core.group_education_principal,1,1,1,1
+access_education_student_final_result_principal,access.education.student.final.result.principal,education_promotion.model_education_student_final_result,education_core.group_education_principal,1,1,1,1
