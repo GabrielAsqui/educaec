@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        <report id="report_time_table"
+            string="Time Table"
+            model="education.timetable"
+            report_type="qweb-pdf"
+            name="education_time_table.report_timetable_template"/>
+        <template id="report_timetable_template">
+            <t t-call="report.html_container">
+                <t t-call="report.external_layout">
+                    
+                    <div class="header">
+                    </div>
+                    <div class="page">
+                        <div>
+                            <t t-foreach="docs" t-as="record">
+                                <table class="table-bordered" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <th colspan="7" class="text-center">ESCUELA DE EDUCACION BASICA</th>                                       
+                                        </tr>
+                                        <tr >
+                                            <th colspan="7" class="text-center">HORARIO DE CLASES</th>
+                                        </tr>
+                                        <tr class="active text-center">
+                                            <th colspan="7" class="text-center"><span t-field="record.class_division"/></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center" colspan="2">HORA</th>
+                                            <th class="text-center" colspan="1">LUNES</th>
+                                            <th class="text-center" colspan="1">MARTES</th>
+                                            <th class="text-center" colspan="1">MIERCOLES</th>
+                                            <th class="text-center" colspan="1">JUEVES</th>
+                                            <th class="text-center" colspan="1">VIERNES</th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_mon" t-as="tt_mon">                                           
+                                                            <td><t t-esc="'%02d:%02d' % (int(tt_mon.time_from), tt_mon.time_from % 1 * 60)" /></td>
+                                                            <td><t t-esc="'%02d:%02d' % (int(tt_mon.time_till), tt_mon.time_till % 1 * 60)" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td colspan="1">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_mon" t-as="tt_mon">                                           
+                                                            <td><span t-field="tt_mon.subject"/></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td colspan="1">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_tue" t-as="tt_tue">                                           
+                                                            <td><span t-field="tt_tue.subject"/></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td colspan="1">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_wed" t-as="tt_wed">                                           
+                                                            <td><span t-field="tt_wed.subject"/></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td colspan="1">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_thur" t-as="tt_thur">                                           
+                                                            <td><span t-field="tt_thur.subject"/></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td colspan="1">
+                                                <table class="table-bordered" width="100%">
+                                                    <tbody>
+                                                        <tr t-foreach="record.timetable_fri" t-as="tt_fri">                                           
+                                                            <td><span t-field="tt_fri.subject"/></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p>&#160;&#160;&#160;</p>
+                            </t>
+                        </div>
+                        
+                    </div>
+                    <div class="footer">
+                    </div>
+                </t>
+            </t>
+        </template>
+        
+    </data>
+</odoo>

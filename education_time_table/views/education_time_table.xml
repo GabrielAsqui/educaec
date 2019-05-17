@@ -57,11 +57,11 @@
                                 <field name="timetable_wed" domain="[('week_day','=', 2)]"  context="{'default_week_day': '2'}">
                                         <tree string="Wednesday" editable="bottom">
                                             <field name="period_id"/>
-                                            <field name="time_from" />
-                                            <field name="time_till"/>
+                                            <field name="time_from" widget="float_time"/>
+                                            <field name="time_till" widget="float_time"/>
                                             <field name="subject"/>
                                             <field name="faculty_id"/>
-                                            <!--<field name="week_day"/>-->
+                                            <field name="week_day" invisible='1'/>
                                         </tree>
                                     </field>
                             </page>
