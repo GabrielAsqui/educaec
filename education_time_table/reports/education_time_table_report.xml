@@ -10,25 +10,32 @@
         <template id="report_timetable_template">
             <t t-call="report.html_container">
                 <t t-call="report.external_layout">
-                    
                     <div class="header">
                     </div>
                     <div class="page">
+                        <link rel='stylesheet' type='text/css' href="/education_time_table/static/src/css/education_time_table_report_style.css" media="screen, print"/>
                         <div>
                             <t t-foreach="docs" t-as="record">
                                 <table class="table-bordered" width="100%">
                                     <tbody>
                                         <tr>
-                                            <th colspan="7" class="text-center">ESCUELA DE EDUCACION BASICA</th>                                       
+                                            <t t-foreach="request.env['res.company'].browse(1)" t-as="comp">
+                                                <th colspan="6" class="text-center"><span t-field="comp.name"/></th>
+                                            </t>                                       
                                         </tr>
                                         <tr >
-                                            <th colspan="7" class="text-center">HORARIO DE CLASES</th>
+                                            <th colspan="6" class="text-center">HORARIO DE CLASES</th>
+                                        </tr>
+                                        <tr >
+                                            <th colspan="6" class="text-center">
+                                                Año lectivo: <span t-field="record.academic_year.name"/>
+                                            </th>
                                         </tr>
                                         <tr class="active text-center">
-                                            <th colspan="7" class="text-center"><span t-field="record.class_division"/></th>
+                                            <th colspan="6" class="text-center"><span t-field="record.class_division"/></th>
                                         </tr>
                                         <tr>
-                                            <th class="text-center" colspan="2">HORA</th>
+                                            <th class="text-center" colspan="1">HORA</th>
                                             <th class="text-center" colspan="1">LUNES</th>
                                             <th class="text-center" colspan="1">MARTES</th>
                                             <th class="text-center" colspan="1">MIERCOLES</th>
@@ -36,58 +43,123 @@
                                             <th class="text-center" colspan="1">VIERNES</th>
                                         </tr>
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
+                                                        <t t-set="periodos" t-value="0"/>
+                                                        <t t-set="numMat" t-value="0"/>
                                                         <tr t-foreach="record.timetable_mon" t-as="tt_mon">                                           
-                                                            <td><t t-esc="'%02d:%02d' % (int(tt_mon.time_from), tt_mon.time_from % 1 * 60)" /></td>
-                                                            <td><t t-esc="'%02d:%02d' % (int(tt_mon.time_till), tt_mon.time_till % 1 * 60)" /></td>
+                                                            <td ><t t-esc="'%02d:%02d' % (int(tt_mon.time_from), tt_mon.time_from % 1 * 60)" /></td>
+                                                            <td ><t t-esc="'%02d:%02d' % (int(tt_mon.time_till), tt_mon.time_till % 1 * 60)" /></td>
+                                                            <t t-set="periodos" t-value="periodos + 1"/>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </td>
-                                            <td colspan="1">
+                                            <td class="dia" colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
                                                         <tr t-foreach="record.timetable_mon" t-as="tt_mon">                                           
-                                                            <td><span t-field="tt_mon.subject"/></td>
+                                                            <td class="dia">
+                                                                <span t-field="tt_mon.subject"/><br />
+                                                                <small>
+                                                                    <span t-field="tt_mon.faculty_id.degree"/>
+                                                                    <span t-field="tt_mon.faculty_id.name"/>
+                                                                </small>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </td>
-                                            <td colspan="1">
+                                            <td class="dia" colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
                                                         <tr t-foreach="record.timetable_tue" t-as="tt_tue">                                           
-                                                            <td><span t-field="tt_tue.subject"/></td>
+                                                            <td class="dia"><span t-field="tt_tue.subject"/><br />
+                                                                <small>
+                                                                    <span t-field="tt_tue.faculty_id.degree"/>
+                                                                    <span t-field="tt_tue.faculty_id.name"/>
+                                                                </small>
+                                                            </td>
+                                                            <t t-set="numMat" t-value="numMat + 1"/>
                                                         </tr>
+                                                        <t t-if="numMat &lt; periodos">
+                                                            <t t-foreach="periodos-numMat" t-as="i">
+                                                                <tr>
+                                                                    <td class="dia"><p>&#160;</p></td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                        <t t-set="numMat" t-value="0"/>
                                                     </tbody>
                                                 </table>
                                             </td>
-                                            <td colspan="1">
+                                            <td class="dia" colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
                                                         <tr t-foreach="record.timetable_wed" t-as="tt_wed">                                           
-                                                            <td><span t-field="tt_wed.subject"/></td>
+                                                            <td class="dia"><span t-field="tt_wed.subject"/><br />
+                                                                <small>
+                                                                    <span t-field="tt_wed.faculty_id.degree"/>
+                                                                    <span t-field="tt_wed.faculty_id.name"/>
+                                                                </small>
+                                                            </td>
+                                                            <t t-set="numMat" t-value="numMat + 1"/>
                                                         </tr>
+                                                        <t t-if="numMat &lt; periodos">
+                                                            <t t-foreach="periodos-numMat" t-as="i">
+                                                                <tr>
+                                                                    <td class="dia"><p>&#160;</p></td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                        <t t-set="numMat" t-value="0"/>
                                                     </tbody>
                                                 </table>
                                             </td>
-                                            <td colspan="1">
+                                            <td class="dia" colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
                                                         <tr t-foreach="record.timetable_thur" t-as="tt_thur">                                           
-                                                            <td><span t-field="tt_thur.subject"/></td>
+                                                            <td class="dia"><span t-field="tt_thur.subject"/><br />
+                                                                <small>
+                                                                    <span t-field="tt_thur.faculty_id.degree"/>
+                                                                    <span t-field="tt_thur.faculty_id.name"/>
+                                                                </small>
+                                                            </td>
+                                                            <t t-set="numMat" t-value="numMat + 1"/>
                                                         </tr>
+                                                        <t t-if="numMat &lt; periodos">
+                                                            <t t-foreach="periodos-numMat" t-as="i">
+                                                                <tr>
+                                                                    <td class="dia"><p>&#160;</p></td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                        <t t-set="numMat" t-value="0"/>
                                                     </tbody>
                                                 </table>
                                             </td>
-                                            <td colspan="1">
+                                            <td class="dia" colspan="1">
                                                 <table class="table-bordered" width="100%">
                                                     <tbody>
                                                         <tr t-foreach="record.timetable_fri" t-as="tt_fri">                                           
-                                                            <td><span t-field="tt_fri.subject"/></td>
+                                                            <td class="dia"><span t-field="tt_fri.subject"/><br />
+                                                                <small>
+                                                                    <span t-field="tt_fri.faculty_id.degree"/>
+                                                                    <span t-field="tt_fri.faculty_id.name"/>
+                                                                </small>
+                                                            </td>
+                                                        <t t-set="numMat" t-value="numMat + 1"/>
                                                         </tr>
+                                                        <t t-if="numMat &lt; periodos">
+                                                            <t t-foreach="periodos-numMat" t-as="i">
+                                                                <tr>
+                                                                    <td class="dia"><p>&#160;</p></td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                        <t t-set="numMat" t-value="0"/>
                                                     </tbody>
                                                 </table>
                                             </td>

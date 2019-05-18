@@ -22,6 +22,7 @@
 ###################################################################################
 
 from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class EducationTimeTable(models.Model):
@@ -78,7 +79,13 @@ class EducationTimeTableSchedule(models.Model):
                              index=True, help="Start and End time of Period.")
     time_till = fields.Float(string='Till', required=True)
     subject = fields.Many2one('education.subject', string='Subjects', required=True)
-    faculty_id = fields.Many2one('education.faculty', string='Faculty', required=True)
+    faculty_id = fields.Many2one(
+        string="Faculty",
+        comodel_name="education.faculty",
+        domain="[('subject_lines', 'in', subject)]",
+        help="Choose the faculty.",
+        required=True,
+    )
     week_day = fields.Selection([
         ('0', 'Monday'),
         ('1', 'Tuesday'),
